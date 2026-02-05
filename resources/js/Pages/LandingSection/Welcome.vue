@@ -3,19 +3,19 @@
         class="relative min-h-[90vh] pt-32 pb-32 flex flex-col justify-center items-center overflow-hidden selection:bg-blue-600 selection:text-white z-10 md:pt-55"
     >
         <div
-            class="absolute inset-0 -z-20 h-full w-full bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"
+            class="absolute inset-0 -z-20 h-full w-full bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-size-[24px_24px] mask-[radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"
         ></div>
         <div
             class="absolute inset-0 -z-10 opacity-[0.03] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"
         ></div>
         <div
-            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-[800px] h-[800px] border border-slate-100/50 rounded-full opacity-50"
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-200 h-200 border border-slate-100/50 rounded-full opacity-50"
         ></div>
         <div
-            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-[600px] h-[600px] border border-slate-100/50 rounded-full opacity-60"
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-150 h-150 border border-slate-100/50 rounded-full opacity-60"
         ></div>
         <!-- <div
-                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-[400px] h-[400px] border border-slate-200/60 rounded-full opacity-70"
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-100 h-100 border border-slate-200/60 rounded-full opacity-70"
             ></div> -->
         <div
             class="absolute -top-24 -left-24 w-96 h-96 bg-blue-400/20 rounded-full blur-[128px] -z-10"
@@ -27,7 +27,7 @@
         <img
             src="/img/logo_kabinet.png"
             alt="Logo Kabinet Background"
-            class="absolute top-[30%] md:top-[60%] left-[50%] -translate-x-1/2 -translate-y-1/2 opacity-5 w-[400px] sm:w-[500px] md:w-[600px] lg:w-[1000px] z-0 pointer-events-none mix-blend-multiply"
+            class="absolute top-[30%] md:top-[60%] left-[50%] -translate-x-1/2 -translate-y-1/2 opacity-5 w-100 sm:w-125 md:w-150 lg:w-250 z-0 pointer-events-none mix-blend-multiply"
         />
 
         <div class="w-full max-w-5xl mx-auto px-4 text-center relative z-10">
@@ -54,8 +54,8 @@
             >
                 Kabinet <br class="md:hidden" />
                 <span
-                    style="font-family: &quot;Dancing Script&quot;, cursive"
-                    class="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-indigo-600 to-blue-800 drop-shadow-sm pb-2 font-bold"
+                    style="font-family: 'Dancing Script', cursive"
+                    class="text-transparent bg-clip-text bg-linear-to-r from-blue-700 via-indigo-600 to-blue-800 drop-shadow-sm pb-2 font-bold"
                 >
                     Merajut Asa
                 </span>
@@ -89,7 +89,7 @@
             >
                 <a
                     href="#"
-                    class="group w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-[15px] font-semibold text-white transition-all duration-300 bg-gradient-to-b from-[#14274f] to-[#14274f] border-t border-[#3b5998] shadow-[inset_0_1px_0_rgba(255,255,255,0.2),0_10px_20px_-5px_rgba(20,39,79,0.4)] hover:from-gray-800 hover:to-black hover:border-gray-600 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.2),0_15px_30px_-5px_rgba(0,0,0,0.5)] hover:-translate-y-1 rounded-full active:scale-95 active:translate-y-0 active:shadow-none"
+                    class="group w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-[15px] font-semibold text-white transition-all duration-300 bg-linear-to-b from-[#14274f] to-[#14274f] border-t border-[#3b5998] shadow-[inset_0_1px_0_rgba(255,255,255,0.2),0_10px_20px_-5px_rgba(20,39,79,0.4)] hover:from-gray-800 hover:to-black hover:border-gray-600 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.2),0_15px_30px_-5px_rgba(0,0,0,0.5)] hover:-translate-y-1 rounded-full active:scale-95 active:translate-y-0 active:shadow-none"
                 >
                     Program Kami
                     <svg
@@ -116,7 +116,7 @@
         </div>
 
         <div
-            class="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-b from-transparent via-slate-50/30 to-slate-50 z-0 pointer-events-none"
+            class="absolute bottom-0 left-0 right-0 h-48 bg-linear-to-b from-transparent via-slate-50/30 to-slate-50 z-0 pointer-events-none"
         ></div>
 
         <div
@@ -127,7 +127,7 @@
                 >Scroll Down</span
             >
             <div
-                class="w-[1px] h-12 bg-gradient-to-b from-slate-400 via-slate-300 to-slate-50/20"
+                class="w-px h-12 bg-linear-to-b from-slate-400 via-slate-300 to-slate-50/20"
             ></div>
         </div>
     </section>
