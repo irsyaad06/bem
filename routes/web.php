@@ -17,3 +17,8 @@ Route::get('/kontak', function () {
     
     return Inertia::render('Kontak');
 })->name('kontak');
+
+Route::get('/struktur', function () {
+    
+    return Inertia::render('Struktur');
+})->name('struktur');
