@@ -9,6 +9,11 @@ Route::get('/', function () {
 });
 
 Route::get('/ruang-asa', function () {
-    // 'RuangAsaPage' harus sesuai dengan nama file di folder Pages (tanpa .vue)
+    
     return Inertia::render('RuangAsaPage');
 })->name('ruang.asa');
+
+Route::get('/kontak', function () {
+    
+    return Inertia::render('Kontak');
+})->name('kontak');
