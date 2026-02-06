@@ -3,21 +3,21 @@ import MainLayout from "@/Layouts/MainLayout.vue";
 import { Head, useForm } from "@inertiajs/vue3";
 import { ref } from "vue";
 
-// --- Form State Management using Inertia ---
+
 const form = useForm({
     judul: "",
     kategori: "",
-    jenis: "Saran", // Default value
+    jenis: "Saran", 
     tujuan: "",
     skala: "",
-    urgensi: "Sedang", // Default value
+    urgensi: "Sedang",
     lokasi: "",
     isi: "",
     bukti: null,
     bersedia_dihubungi: false,
 });
 
-// --- Data Options ---
+
 const kategoriOptions = [
     "Akademik",
     "Fasilitas Kampus",

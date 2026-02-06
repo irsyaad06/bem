@@ -15,7 +15,7 @@ const menuItems = [
         url: "#", // Parent tidak navigasi langsung biasanya
         children: [
             { label: "Program Kerja", url: "/program-kerja" },
-            { label: "Aktivitas Kerja", url: "/aktivitas-kerja" },
+            { label: "Aktivitas Kerja", url: "/list-kementerian" },
             { label: "Transparansi Dana", url: "/transparansi-dana" },
             { label: "Kesekretariatan", url: "/kesekretariatan" },
         ]
