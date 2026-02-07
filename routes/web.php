@@ -58,3 +58,23 @@ Route::get('/aktivitas-kerja/detail/{id}', function ($id) {
         'id' => $id
     ]);
 })->name('aktivitas.detail');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Route::get('/developer', function () {
+
+    return Inertia::render('Developer');
+})->name('developer');
