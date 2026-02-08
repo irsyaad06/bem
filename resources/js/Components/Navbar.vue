@@ -27,8 +27,8 @@ const menuItems = [
             {
                 title: "Organisasi Kemahasiswaan",
                 links: [
-                    { label: "UKM", url: "/ukm-unikom" }, // Placeholder URL
-                    { label: "HIMA", url: "/hima-unikom" }, // Placeholder URL
+                    { label: "UKM", url: "/ormawa" },
+                    { label: "HIMA", url: "/ormawa" },
                 ],
             },
         ],
