@@ -39,17 +39,15 @@ Route::get('/program-kerja/{id}', function ($id) {
 })->name('program.detail');
 
 // 1. Halaman Pilihan Kementerian
-Route::get('/list-kementerian', function () {
-    return Inertia::render('AktivitasKerja/ListKementerian');
-})->name('list.kementerian');
+// Route::get('/list-kementerian', function () {
+//     return Inertia::render('AktivitasKerja/ListKementerian');
+// })->name('list.kementerian');
 
 // 2. Halaman Aktivitas Kerja (Berdasarkan ID Kementerian)
-Route::get('/aktivitas-kerja/kementerian/{id}', function ($id) {
+Route::get('/aktivitas-kerja', function () {
     // Nanti ambil data kementerian & aktivitas dari DB berdasarkan $id
-    return Inertia::render('AktivitasKerja/AktivitasKerja', [
-        'ministryId' => $id
-    ]);
-})->name('aktivitas.kementerian');
+    return Inertia::render('AktivitasKerja/AktivitasKerja');
+})->name('aktivitas.kerja');
 
 // 3. Halaman Detail Aktivitas (Berdasarkan ID Aktivitas)
 Route::get('/aktivitas-kerja/detail/{id}', function ($id) {

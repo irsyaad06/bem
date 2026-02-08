@@ -47,7 +47,7 @@ const menuItems = [
             },
             {
                 label: "Aktivitas Kerja",
-                url: "/list-kementerian",
+                url: "/aktivitas-kerja",
                 desc: "Dokumentasi kegiatan.",
                 icon: "⚡",
             },

@@ -51,7 +51,7 @@ const getStatusColor = (status) => {
         <div class="min-h-screen bg-slate-50 pt-32 pb-24">
             
             <div class="container mx-auto px-4 mb-6 max-w-5xl">
-                <Link :href="`/aktivitas-kerja/kementerian/${activity.ministryId}`" class="inline-flex items-center text-sm font-bold text-slate-500 hover:text-blue-600 transition-colors group">
+                <Link :href="`/aktivitas-kerja`" class="inline-flex items-center text-sm font-bold text-slate-500 hover:text-blue-600 transition-colors group">
                     <svg class="w-4 h-4 mr-1 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
                     Kembali ke Daftar Aktivitas
                 </Link>
