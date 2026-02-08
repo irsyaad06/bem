@@ -70,7 +70,7 @@ const getStatusColor = (status) => {
                 </p>
             </div>
 
-            <div class="container mx-auto px-4 relative z-10 max-w-5xl">
+            <div class="container mx-auto px-4 relative z-10 max-w-6xl">
                 
                 <div class="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-slate-300 md:-translate-x-1/2 h-full z-0"></div>
 

@@ -47,7 +47,7 @@ const staff = {
             <div class="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
             <div class="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px]"></div>
             
-            <div class="container mx-auto px-4 max-w-5xl relative z-10">
+            <div class="container mx-auto px-4 max-w-6xl relative z-10">
 
                 <div class="mb-6">
                     <Link :href="`/kementerian/${staffministryId}`" class="inline-flex items-center text-sm font-bold text-slate-400 hover:text-blue-600 transition-colors group">

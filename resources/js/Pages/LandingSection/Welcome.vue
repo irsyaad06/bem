@@ -30,7 +30,7 @@
             class="absolute top-[30%] md:top-[60%] left-[50%] -translate-x-1/2 -translate-y-1/2 opacity-5 w-100 sm:w-125 md:w-150 lg:w-250 z-0 pointer-events-none mix-blend-multiply"
         />
 
-        <div class="w-full max-w-5xl mx-auto px-4 text-center relative z-10">
+        <div class="w-full max-w-6xl mx-auto px-4 text-center relative z-10">
             <div
                 class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-100/80 bg-white/70 backdrop-blur-md shadow-sm mb-8 hover:shadow-md hover:scale-105 transition-all cursor-default"
             >

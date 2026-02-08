@@ -80,7 +80,7 @@ const submit = () => {
             <div class="absolute top-20 left-10 w-72 h-72 bg-blue-400/20 rounded-full blur-[100px] -z-10 animate-pulse"></div>
             <div class="absolute bottom-20 right-10 w-80 h-80 bg-indigo-500/10 rounded-full blur-[100px] -z-10"></div>
 
-            <div class="container mx-auto px-4 relative z-10 max-w-4xl">
+            <div class="container mx-auto px-4 relative z-10 max-w-6xl">
                 
                 <div class="text-center mb-10">
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs font-bold uppercase tracking-wider mb-4">

@@ -38,7 +38,7 @@ const submit = () => {
                 class="absolute bottom-0 right-0 w-96 h-96 bg-indigo-500/10 rounded-full blur-[100px] -z-10"
             ></div>
 
-            <div class="container mx-auto px-4 relative z-10 max-w-5xl">
+            <div class="container mx-auto px-4 relative z-10 max-w-6xl">
                 <div
                     class="bg-white/60 backdrop-blur-2xl rounded-[2.5rem] shadow-2xl border border-white/50 overflow-hidden"
                 >

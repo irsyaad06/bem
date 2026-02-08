@@ -35,7 +35,7 @@ const program = {
     <MainLayout>
         <div class="min-h-screen bg-slate-50 pt-40 pb-15">
             
-            <div class="container mx-auto px-4 max-w-5xl mb-8">
+            <div class="container mx-auto px-4 max-w-6xl mb-8">
                 <div class="flex items-center gap-2 text-sm text-slate-500">
                     <Link href="/program-kerja" class="hover:text-blue-600 transition-colors">Program Kerja</Link>
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
@@ -45,7 +45,7 @@ const program = {
                 <div></div>
             </div>
 
-            <div class="container mx-auto px-4 max-w-5xl">
+            <div class="container mx-auto px-4 max-w-6xl">
                 
                 <div class="bg-white rounded-[2rem] shadow-xl overflow-hidden border border-slate-100 mb-8">
                     <div class="h-64 md:h-96 w-full relative">

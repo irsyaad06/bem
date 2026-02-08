@@ -128,7 +128,7 @@ const closeMobileMenu = () => {
         class="fixed top-6 left-0 right-0 z-50 flex flex-col items-center px-4"
     >
         <div
-            class="relative z-50 w-full max-w-5xl rounded-full px-6 py-3 flex items-center justify-between transition-all duration-300 bg-white/90 backdrop-blur-xl border border-white/60 ring-1 ring-gray-900/5 shadow-sm hover:shadow-md"
+            class="relative z-50 w-full max-w-6xl rounded-full px-6 py-3 flex items-center justify-between transition-all duration-300 bg-white/90 backdrop-blur-xl border border-white/60 ring-1 ring-gray-900/5 shadow-sm hover:shadow-md"
         >
             <Link
                 href="/"
@@ -251,7 +251,7 @@ const closeMobileMenu = () => {
         >
             <div
                 v-if="activeDesktopMenu"
-                class="absolute top-full mt-2 w-full max-w-5xl z-40 origin-top"
+                class="absolute top-full mt-2 w-full max-w-6xl z-40 origin-top"
             >
                 <div
                     class="bg-white/95 backdrop-blur-2xl rounded-3xl shadow-2xl border border-white/50 ring-1 ring-gray-900/5 p-2 overflow-hidden"

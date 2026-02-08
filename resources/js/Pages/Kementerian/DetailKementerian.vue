@@ -197,7 +197,7 @@ const menus = [
                                             <h3 class="text-lg font-bold text-slate-800 mb-4 line-clamp-2 group-hover:text-blue-700 transition-colors">
                                                 {{ activity.title }}
                                             </h3>
-                                            <div class="mt-auto">
+                                            <div class="mt-auto z-10">
                                                 <Link :href="`/aktivitas-kerja/detail/${activity.id}`" class="inline-flex items-center text-sm font-bold text-blue-600 hover:text-blue-800">
                                                     Lihat Detail
                                                     <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
