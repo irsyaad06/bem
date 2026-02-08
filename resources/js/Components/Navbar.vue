@@ -53,7 +53,7 @@ const menuItems = [
             },
             {
                 label: "Transparansi Dana",
-                url: "/transparansi-dana",
+                url: "/keuangan",
                 desc: "Laporan keuangan terbuka.",
                 icon: "💰",
             },

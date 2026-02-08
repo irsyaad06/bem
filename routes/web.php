@@ -81,6 +81,11 @@ Route::get('/ormawa', function () {
     return Inertia::render('Ormawa');
 })->name('ormawa');
 
+Route::get('/keuangan', function () {
+    // Nanti ambil data kementerian & aktivitas dari DB berdasarkan $id
+    return Inertia::render('Keuangan');
+})->name('keuangan');
+
 
 
 
