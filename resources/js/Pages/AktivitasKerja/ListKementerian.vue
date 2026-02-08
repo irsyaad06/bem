@@ -22,7 +22,7 @@ const ministries = [
         <div class="min-h-screen bg-slate-50 pt-32 pb-24">
             <div class="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
             
-            <div class="container mx-auto px-4 max-w-6xl relative z-10">
+            <div class="container mx-auto px-4 max-w-5xl relative z-10">
 
                 <div class="text-center mb-16">
                     <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-100 bg-white shadow-sm mb-4">

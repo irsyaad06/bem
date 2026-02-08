@@ -43,7 +43,7 @@ const filteredActivities = computed(() => {
     <MainLayout>
         <div class="min-h-screen bg-slate-50 pt-32 pb-24">
             
-            <div class="container mx-auto px-4 max-w-6xl relative z-10">
+            <div class="container mx-auto px-4 max-w-5xl relative z-10">
                 
                 <div class="mb-8">
                     <Link href="/list-kementerian" class="inline-flex items-center text-sm font-bold text-slate-500 hover:text-blue-600 transition-colors">

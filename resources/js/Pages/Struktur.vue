@@ -69,7 +69,7 @@ const kemenkoanList = [
                 </p>
             </div>
 
-            <div class="container mx-auto px-4 relative z-10 max-w-6xl">
+            <div class="container mx-auto px-4 relative z-10 max-w-5xl">
                 <svg
                     class="hidden md:block absolute top-[56px] left-1/2 -translate-x-1/2 w-[380px] h-[100px] -z-10 text-slate-400 overflow-visible"
                     fill="none"
