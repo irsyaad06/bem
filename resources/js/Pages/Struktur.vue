@@ -51,7 +51,7 @@ const kemenkoanList = [
                 class="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:32px_32px]"
             ></div>
 
-            <div class="relative pt-32 pb-12 text-center z-10 px-4">
+            <div class="relative pt-32 pb-16 text-center z-10 px-4">
                 <div
                     class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-100 bg-white/50 backdrop-blur shadow-sm mb-4"
                 >
@@ -70,226 +70,201 @@ const kemenkoanList = [
             </div>
 
             <div class="container mx-auto px-4 relative z-10 max-w-6xl">
+                <svg
+                    class="hidden md:block absolute top-[56px] left-1/2 -translate-x-1/2 w-[380px] h-[100px] -z-10 text-slate-400 overflow-visible"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
+                    <path d="M 0 0 C 190 0, 190 96, 380 96" />
+                </svg>
+
                 <div
-                    class="absolute left-1/2 -translate-x-1/2 top-[280px] w-px h-24 bg-slate-300 hidden md:block"
+                    class="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-24 mb-16 relative z-10"
+                >
+                    <div
+                        class="relative bg-white rounded-2xl p-6 shadow-md border-t-4 border-yellow-500 w-full max-w-[280px] text-center hover:-translate-y-1 transition-transform"
+                    >
+                        <div
+                            class="w-16 h-16 mx-auto bg-yellow-50 rounded-full flex items-center justify-center text-yellow-600 mb-4 border border-yellow-100 relative z-20 bg-white"
+                        >
+                            <svg
+                                class="w-8 h-8"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                                ></path>
+                            </svg>
+                        </div>
+                        <h2 class="text-xl font-bold text-slate-900">
+                            Presiden
+                        </h2>
+                        <p class="text-slate-500 text-sm font-medium">
+                            mahasiswa
+                        </p>
+                    </div>
+
+                    <div
+                        class="relative bg-white rounded-2xl p-6 shadow-md border-t-4 border-yellow-500 w-full max-w-[280px] text-center hover:-translate-y-1 transition-transform md:mt-8"
+                    >
+                        <div
+                            class="w-16 h-16 mx-auto bg-yellow-50 rounded-full flex items-center justify-center text-yellow-600 mb-4 border border-yellow-100 relative z-20 bg-white"
+                        >
+                            <svg
+                                class="w-8 h-8"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                                ></path>
+                            </svg>
+                        </div>
+                        <h2 class="text-xl font-bold text-slate-900">
+                            Wakil Presiden
+                        </h2>
+                        <p class="text-slate-500 text-sm font-medium">
+                            mahasiswa
+                        </p>
+                    </div>
+                </div>
+
+                <div
+                    class="hidden md:block absolute left-1/2 -translate-x-1/2 top-[160px] w-[2px] h-[60px] bg-slate-400 z-0"
                 ></div>
 
                 <div
-                    class="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-12 mb-20 relative"
+                    class="hidden md:block absolute left-1/2 -translate-x-1/2 top-[230px] w-[50%] max-w-[500px] h-[2px] bg-slate-400 z-0"
                 >
-                    <div class="relative group w-full max-w-sm">
-                        <div
-                            class="relative bg-white rounded-[2rem] p-3 shadow-xl border border-slate-100 group-hover:-translate-y-2 transition-transform duration-300"
-                        >
-                            <div
-                                class="aspect-[4/5] rounded-[1.5rem] overflow-hidden bg-slate-200 relative mb-4"
-                            >
-                                <img
-                                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                                    alt="Presiden Mahasiswa"
-                                    class="w-full h-full object-cover"
-                                />
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent"
-                                ></div>
-
-                                <div
-                                    class="absolute bottom-4 left-0 right-0 text-center"
-                                >
-                                    <h2 class="text-white text-xl font-bold">
-                                        Nama Presiden
-                                    </h2>
-                                    <p
-                                        class="text-blue-200 text-sm font-medium uppercase tracking-wider"
-                                    >
-                                        Presiden Mahasiswa
-                                    </p>
-                                </div>
-                            </div>
-                            <div
-                                class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-yellow-400 to-amber-500 text-white px-6 py-1.5 rounded-full text-xs font-bold shadow-lg uppercase tracking-wider"
-                            >
-                                01 Pimpinan
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="relative group w-full max-w-sm mt-8 md:mt-12">
-                        <div
-                            class="relative bg-white rounded-[2rem] p-3 shadow-xl border border-slate-100 group-hover:-translate-y-2 transition-transform duration-300"
-                        >
-                            <div
-                                class="aspect-[4/5] rounded-[1.5rem] overflow-hidden bg-slate-200 relative mb-4"
-                            >
-                                <img
-                                    src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                                    alt="Wakil Presiden Mahasiswa"
-                                    class="w-full h-full object-cover"
-                                />
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"
-                                ></div>
-
-                                <div
-                                    class="absolute bottom-4 left-0 right-0 text-center"
-                                >
-                                    <h2 class="text-white text-xl font-bold">
-                                        Nama Wakil
-                                    </h2>
-                                    <p
-                                        class="text-slate-300 text-sm font-medium uppercase tracking-wider"
-                                    >
-                                        Wakil Presiden
-                                    </p>
-                                </div>
-                            </div>
-                            <div
-                                class="absolute -top-3 left-1/2 -translate-x-1/2 bg-slate-700 text-white px-6 py-1.5 rounded-full text-xs font-bold shadow-lg uppercase tracking-wider"
-                            >
-                                02 Pimpinan
-                            </div>
-                        </div>
-                    </div>
+                    <div
+                        class="absolute left-0 top-0 w-[2px] h-[30px] bg-slate-400"
+                    ></div>
+                    <div
+                        class="absolute right-0 top-0 w-[2px] h-[30px] bg-slate-400"
+                    ></div>
                 </div>
 
-                <div class="hidden md:flex justify-center mb-8">
-                    <div class="w-px h-16 bg-slate-300"></div>
-                </div>
                 <div
-                    class="hidden md:block relative h-px bg-slate-300 w-1/2 mx-auto mb-8"
+                    class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-16 relative z-10 mt-12 md:mt-16"
                 >
                     <div
-                        class="absolute left-0 top-0 w-px h-8 bg-slate-300"
-                    ></div>
-                    <div
-                        class="absolute right-0 top-0 w-px h-8 bg-slate-300"
-                    ></div>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-20">
-                    <div
-                        class="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-blue-600 hover:shadow-xl transition-all duration-300 group"
+                        class="bg-white rounded-xl p-5 shadow-sm border border-slate-200 flex items-center gap-4 relative"
                     >
-                        <div class="flex items-start gap-4">
-                            <div
-                                class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform"
-                            >
-                                <svg
-                                    class="w-6 h-6"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                                    ></path>
-                                </svg>
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-bold text-slate-800">
-                                    Kementerian Sekretariat Negara
-                                </h3>
-                                <p class="text-sm text-slate-500 mt-1">
-                                    Pusat administrasi, kesekretariatan, dan
-                                    manajemen data organisasi.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                        <div
+                            class="md:hidden absolute -top-8 left-1/2 -translate-x-1/2 w-[2px] h-8 bg-slate-400"
+                        ></div>
 
-                    <div
-                        class="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-yellow-400 hover:shadow-xl transition-all duration-300 group"
-                    >
-                        <div class="flex items-start gap-4">
-                            <div
-                                class="w-12 h-12 rounded-xl bg-yellow-50 text-yellow-600 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform"
-                            >
-                                <svg
-                                    class="w-6 h-6"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                                    ></path>
-                                </svg>
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-bold text-slate-800">
-                                    Kementerian Keuangan
-                                </h3>
-                                <p class="text-sm text-slate-500 mt-1">
-                                    Pengelolaan anggaran, transparansi dana, dan
-                                    stabilitas finansial.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="hidden md:flex flex-col items-center mb-10">
-                    <div class="w-px h-12 bg-slate-300"></div>
-                    <div
-                        class="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center text-slate-500 z-10 border-4 border-slate-50"
-                    >
-                        <svg
-                            class="w-5 h-5"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
+                        <div
+                            class="w-12 h-12 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center shrink-0"
                         >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
-                            ></path>
-                        </svg>
+                            <svg
+                                class="w-6 h-6"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                                ></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-800">
+                                Kementerian Sekretariat Negara
+                            </h3>
+                        </div>
                     </div>
-                    <div class="w-px h-8 bg-slate-300"></div>
-                    <div class="w-2/3 h-px bg-slate-300 relative">
+
+                    <div
+                        class="bg-white rounded-xl p-5 shadow-sm border border-slate-200 flex items-center gap-4 relative"
+                    >
                         <div
-                            class="absolute left-0 top-0 w-px h-8 bg-slate-300"
+                            class="md:hidden absolute -top-8 left-1/2 -translate-x-1/2 w-[2px] h-8 bg-slate-400"
+                        ></div>
+
+                        <div
+                            class="w-12 h-12 rounded-lg bg-yellow-50 text-yellow-600 flex items-center justify-center shrink-0"
+                        >
+                            <svg
+                                class="w-6 h-6"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                                ></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-800">
+                                Kementerian Keuangan
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="hidden md:flex flex-col items-center mb-10 relative"
+                >
+                    <div
+                        class="absolute -top-16 w-[2px] h-16 bg-slate-400"
+                    ></div>
+
+                    <div
+                        class="w-4 h-4 bg-slate-400 rounded-full z-10 border-4 border-slate-50"
+                    ></div>
+
+                    <div
+                        class="w-[68%] h-[2px] bg-slate-400 relative mt-[-10px]"
+                    >
+                        <div
+                            class="absolute left-0 top-0 w-[2px] h-8 bg-slate-400"
                         ></div>
                         <div
-                            class="absolute left-1/2 -translate-x-1/2 top-0 w-px h-8 bg-slate-300"
+                            class="absolute left-1/2 -translate-x-1/2 top-0 w-[2px] h-8 bg-slate-400"
                         ></div>
                         <div
-                            class="absolute right-0 top-0 w-px h-8 bg-slate-300"
+                            class="absolute right-0 top-0 w-[2px] h-8 bg-slate-400"
                         ></div>
                     </div>
                 </div>
 
-                <div class="grid md:grid-cols-3 gap-8 mt-8">
+                <div class="grid md:grid-cols-3 gap-8 mt-4">
                     <div
                         v-for="(kemenko, index) in kemenkoanList"
                         :key="index"
-                        class="flex flex-col h-full"
+                        class="flex flex-col h-full relative"
                     >
                         <div
-                            class="bg-white rounded-[2rem] shadow-xl border border-slate-100 overflow-hidden flex-1 hover:shadow-2xl transition-all duration-300 group hover:-translate-y-1"
+                            class="md:hidden absolute -top-8 left-1/2 -translate-x-1/2 w-[2px] h-8 bg-slate-400"
+                        ></div>
+
+                        <div
+                            class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden flex-1 group hover:-translate-y-1 transition-transform"
                         >
                             <div
-                                class="h-24 p-6 flex items-start justify-between bg-gradient-to-br relative overflow-hidden"
-                                :class="kemenko.color"
+                                class="p-6 flex items-center gap-4 bg-slate-50 border-b border-slate-100"
                             >
                                 <div
-                                    class="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-20 transition-opacity"
-                                ></div>
-                                <div
-                                    class="text-white font-bold text-lg relative z-10 w-2/3"
-                                >
-                                    {{ kemenko.name }}
-                                </div>
-                                <div
-                                    class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white backdrop-blur-sm"
+                                    class="w-10 h-10 rounded-full flex items-center justify-center text-white shrink-0 shadow-sm bg-gradient-to-br"
+                                    :class="kemenko.color"
                                 >
                                     <svg
                                         class="w-5 h-5"
@@ -305,48 +280,49 @@ const kemenkoanList = [
                                         ></path>
                                     </svg>
                                 </div>
+                                <div>
+                                    <h3
+                                        class="text-base font-bold text-slate-800 leading-tight"
+                                    >
+                                        {{ kemenko.name }}
+                                    </h3>
+                                    <p
+                                        class="text-slate-500 text-sm font-medium"
+                                    >
+                                        {{ kemenko.fullname }}
+                                    </p>
+                                </div>
                             </div>
 
-                            <div class="p-6">
-                                <h4
-                                    class="text-sm font-semibold text-slate-400 uppercase tracking-wide mb-4"
-                                >
-                                    Koordinasi Bidang
-                                </h4>
-                                <h3
-                                    class="text-lg font-bold text-slate-800 mb-6 min-h-[3.5rem]"
-                                >
-                                    {{ kemenko.fullname }}
-                                </h3>
+                            <div class="p-5">
+                                <div class="space-y-3 relative">
+                                    <div
+                                        class="absolute left-[7px] top-2 bottom-4 w-[2px] bg-slate-200"
+                                    ></div>
 
-                                <div class="space-y-3">
                                     <div
                                         v-for="(
                                             ministry, mIndex
                                         ) in kemenko.ministries"
                                         :key="mIndex"
-                                        class="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100 text-slate-600 text-sm font-medium hover:bg-blue-50 hover:text-blue-700 hover:border-blue-100 transition-colors cursor-default"
+                                        class="relative pl-6"
                                     >
                                         <div
-                                            class="w-1.5 h-1.5 rounded-full bg-slate-300"
+                                            class="absolute left-[7px] top-1/2 -translate-y-1/2 w-3 h-[2px] bg-slate-200"
                                         ></div>
-                                        {{ ministry }}
+
+                                        <div
+                                            class="p-3 rounded-lg bg-white border border-slate-100 text-slate-600 text-sm font-medium hover:bg-slate-50 hover:text-blue-700 transition-colors shadow-sm"
+                                        >
+                                            {{ ministry }}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <div
-                            v-if="index !== kemenkoanList.length - 1"
-                            class="h-8 w-px bg-slate-300 mx-auto md:hidden my-2"
-                        ></div>
                     </div>
                 </div>
             </div>
         </div>
     </MainLayout>
 </template>
-
-<style scoped>
-/* Tambahan CSS jika diperlukan untuk garis hierarki yang lebih kompleks */
-</style>
