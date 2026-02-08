@@ -21,7 +21,7 @@ const menuItems = [
                 links: [
                     { label: "Pimpinan", url: "/pimpinan" }, // Placeholder URL
                     { label: "Struktur Organisasi", url: "/struktur" },
-                    { label: "Kementerian", url: "/list-kementerian" },
+                    { label: "Kementerian", url: "/kementerian" },
                 ],
             },
             {

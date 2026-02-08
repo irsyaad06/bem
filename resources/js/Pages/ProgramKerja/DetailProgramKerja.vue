@@ -25,6 +25,8 @@ const program = {
         "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=400&q=80"
     ]
 };
+
+
 </script>
 
 <template>
