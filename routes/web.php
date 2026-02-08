@@ -59,7 +59,9 @@ Route::get('/aktivitas-kerja/detail/{id}', function ($id) {
     ]);
 })->name('aktivitas.detail');
 
-
+Route::get('/pimpinan', function () {
+    return Inertia::render('Pimpinan');
+})->name('pimpinan');
 
 
 
