@@ -86,6 +86,11 @@ Route::get('/keuangan', function () {
     return Inertia::render('Keuangan');
 })->name('keuangan');
 
+Route::get('/kesekretariatan', function () {
+    // Nanti ambil data kementerian & aktivitas dari DB berdasarkan $id
+    return Inertia::render('Kesekretariatan');
+})->name('kesekretariatan');
+
 
 
 
