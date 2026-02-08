@@ -2,18 +2,20 @@
 import { Head } from "@inertiajs/vue3";
 import { ref } from "vue";
 
-// State untuk Accordion
-const activeAccordion = ref(null);
+// State: Default ke index 0 (Misi pertama terbuka)
+const activeIndex = ref(0);
 
-const toggleAccordion = (index) => {
-    if (activeAccordion.value === index) {
-        activeAccordion.value = null;
+// Function ganti tab
+const setActive = (index) => {
+    // Logic tambahan untuk mobile: Jika diklik lagi, bisa tutup (toggle)
+    // Tapi untuk desktop tetap harus ada yang aktif satu.
+    if (window.innerWidth < 1024 && activeIndex.value === index) {
+        activeIndex.value = null; // Bisa tutup di mobile
     } else {
-        activeAccordion.value = index;
+        activeIndex.value = index;
     }
 };
 
-// Data Misi (Dipisah huruf depannya untuk styling 'MERASA')
 const missions = [
     {
         letter: "M",
@@ -49,14 +51,12 @@ const missions = [
 </script>
 
 <template>
-    <Head title="Visi & Misi" />
+        <Head title="Visi & Misi" />
 
-    <MainLayout>
-        <section class="relative min-h-screen pt-10 pb-24 flex flex-col items-center overflow-hidden selection:bg-blue-600 selection:text-white">
+        <section class="relative min-h-screen pt-10 pb-16 flex flex-col items-center overflow-hidden selection:bg-blue-600 selection:text-white">
             
             <div class="absolute inset-0 -z-20 h-full w-full bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
             <div class="absolute inset-0 -z-10 opacity-[0.03] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
-            
             <div class="absolute top-1/4 left-0 w-96 h-96 bg-blue-400/10 rounded-full blur-[128px] -z-10"></div>
             <div class="absolute bottom-0 right-0 w-96 h-96 bg-indigo-500/10 rounded-full blur-[128px] -z-10"></div>
 
@@ -81,10 +81,9 @@ const missions = [
                     </span>
                 </h1>
 
-                <div class="mb-20">
+                <div class="mb-24 max-w-4xl mx-auto">
                     <div class="relative group">
                         <div class="absolute -inset-1 bg-gradient-to-r from-blue-200 to-indigo-200 rounded-[2rem] blur-xl opacity-50 group-hover:opacity-75 transition duration-500"></div>
-                        
                         <div class="relative bg-white/80 backdrop-blur-xl border border-white/50 rounded-[2rem] p-8 md:p-12 shadow-xl text-center">
                             <h2 class="text-lg md:text-xl font-bold text-blue-600 uppercase tracking-[0.2em] mb-6">Visi Kami</h2>
                             <p class="text-2xl md:text-3xl lg:text-4xl font-medium text-slate-800 leading-relaxed font-serif italic">
@@ -94,69 +93,131 @@ const missions = [
                     </div>
                 </div>
 
-                <div>
-                    <div class="text-center mb-10">
+                <div class="max-w-5xl items-center">
+                    <div class="text-center mb-12">
                         <h2 class="text-3xl font-bold text-slate-900">Misi Kami</h2>
                         <p class="text-slate-500 mt-2">Nilai-nilai utama yang membentuk "MERASA"</p>
                     </div>
 
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div 
-                            v-for="(mission, index) in missions" 
-                            :key="index"
-                            class="group"
-                        >
-                            <div 
-                                @click="toggleAccordion(index)"
-                                class="bg-white border border-slate-200 rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-lg hover:border-blue-200 relative"
-                                :class="{'ring-2 ring-blue-100 shadow-md': activeAccordion === index}"
-                            >
-                                <div class="p-6 flex items-center justify-between gap-4">
-                                    <h3 class="text-xl md:text-2xl font-bold text-slate-700 group-hover:text-slate-900 transition-colors">
-                                        <span class="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-blue-600 to-indigo-600 mr-0.5">
-                                            {{ mission.letter }}
-                                        </span>
-                                        <span>{{ mission.restTitle }}</span>
-                                    </h3>
-
-                                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-blue-50 group-hover:text-blue-600 transition-all duration-300">
-                                        <svg 
-                                            class="w-5 h-5 transform transition-transform duration-300"
-                                            :class="{'rotate-180': activeAccordion === index}"
-                                            fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                        >
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                        </svg>
-                                    </div>
-                                </div>
-
-                                <div 
-                                    class="grid transition-all duration-300 ease-out"
-                                    :class="activeAccordion === index ? 'grid-rows-[1fr] opacity-100 pb-6' : 'grid-rows-[0fr] opacity-0'"
-                                >
-                                    <div class="overflow-hidden px-6">
-                                        <div class="pt-2 border-t border-slate-100">
-                                            <p class="text-slate-600 leading-relaxed text-lg mt-4">
-                                                {{ mission.desc }}
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
+                    <div class="grid lg:grid-cols-12 gap-8 items-start">
+                        
+                        <div class="lg:col-span-5 flex flex-col gap-3">
+                            <div v-for="(mission, index) in missions" :key="index">
                                 
+                                <button 
+                                    @click="setActive(index)"
+                                    class="group relative flex items-center p-4 rounded-xl transition-all duration-300 border text-left w-full"
+                                    :class="activeIndex === index 
+                                        ? 'bg-white border-blue-200 shadow-lg scale-[1.02] z-10' 
+                                        : 'bg-white/40 border-transparent hover:bg-white hover:border-slate-100 hover:shadow-sm text-slate-500'"
+                                >
+                                    <div 
+                                        class="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-12 bg-gradient-to-b from-blue-600 to-indigo-600 rounded-r-full transition-all duration-300"
+                                        :class="activeIndex === index ? 'opacity-100' : 'opacity-0'"
+                                    ></div>
+
+                                    <div class="pl-4">
+                                        <h3 class="text-xl font-bold transition-colors"
+                                            :class="activeIndex === index ? 'text-slate-800' : 'text-slate-400 group-hover:text-slate-600'"
+                                        >
+                                            <span class="text-2xl font-extrabold mr-0.5"
+                                                :class="activeIndex === index ? 'text-blue-600' : 'text-slate-400 group-hover:text-slate-500'"
+                                            >
+                                                {{ mission.letter }}
+                                            </span>
+                                            {{ mission.restTitle }}
+                                        </h3>
+                                    </div>
+                                    
+                                    <svg 
+                                        class="w-5 h-5 ml-auto transition-all duration-300 transform"
+                                        :class="activeIndex === index ? 'text-blue-600 rotate-90 lg:rotate-0' : 'text-slate-300 opacity-0 group-hover:opacity-100'"
+                                        fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                    >
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                    </svg>
+                                </button>
+
                                 <div 
-                                    class="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 transition-all duration-300"
-                                    :class="activeAccordion === index ? 'w-full' : 'w-0'"
-                                ></div>
+                                    v-show="activeIndex === index"
+                                    class="lg:hidden mt-2 p-6 bg-white/60 border border-blue-100 rounded-xl shadow-sm animate-fade-in-down"
+                                >
+                                    <div class="mb-3">
+                                        <span class="inline-block px-3 py-1 bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-wider rounded-full">
+                                            Poin Misi {{ index + 1 }}
+                                        </span>
+                                    </div>
+                                    <p class="text-slate-600 leading-relaxed font-medium">
+                                        {{ mission.desc }}
+                                    </p>
+                                </div>
+
                             </div>
                         </div>
+
+                        <div class="hidden lg:block lg:col-span-7">
+                            <div class="relative bg-white rounded-[2rem] p-8 md:p-12 shadow-2xl border border-slate-100 min-h-[300px] flex flex-col justify-center overflow-hidden">
+                                
+                                <div class="absolute -right-10 -bottom-10 text-[12rem] font-black text-slate-50 opacity-50 select-none pointer-events-none transition-all duration-500">
+                                    {{ activeIndex !== null ? missions[activeIndex].letter : '' }}
+                                </div>
+                                <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-bl-[100%] -z-10 opacity-60"></div>
+
+                                <Transition mode="out-in" 
+                                    enter-active-class="transition duration-300 ease-out"
+                                    enter-from-class="opacity-0 translate-y-4"
+                                    enter-to-class="opacity-100 translate-y-0"
+                                    leave-active-class="transition duration-200 ease-in"
+                                    leave-from-class="opacity-100 translate-y-0"
+                                    leave-to-class="opacity-0 -translate-y-4"
+                                >
+                                    <div v-if="activeIndex !== null" :key="activeIndex" class="relative z-10">
+                                        <div class="mb-6">
+                                            <span class="inline-block px-3 py-1 bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-wider rounded-full mb-3">
+                                                Poin Misi {{ activeIndex + 1 }}
+                                            </span>
+                                            <h3 class="text-3xl md:text-4xl font-bold text-slate-900 leading-tight">
+                                                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+                                                    {{ missions[activeIndex].letter }}
+                                                </span>{{ missions[activeIndex].restTitle }}
+                                            </h3>
+                                        </div>
+                                        
+                                        <div class="w-20 h-1.5 bg-slate-100 rounded-full mb-8">
+                                            <div class="h-full bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full w-1/3"></div>
+                                        </div>
+
+                                        <p class="text-lg text-slate-600 leading-relaxed font-medium">
+                                            {{ missions[activeIndex].desc }}
+                                        </p>
+                                    </div>
+                                </Transition>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
             </div>
         </section>
-    </MainLayout>
 </template>
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+/* Animasi untuk accordion mobile */
+.animate-fade-in-down {
+    animation: fadeInDown 0.3s ease-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 </style>

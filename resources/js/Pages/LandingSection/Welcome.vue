@@ -64,23 +64,13 @@
             <p
                 class="mt-4 text-lg md:text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed mb-10 font-medium"
             >
-                "Yakinkan dengan
-                <span
-                    class="text-slate-800 font-semibold underline decoration-blue-200 decoration-2 underline-offset-4"
-                    >Iman</span
-                >, Usahakan dengan
-                <span
-                    class="text-slate-800 font-semibold underline decoration-blue-200 decoration-2 underline-offset-4"
-                    >Ilmu</span
-                >, Sampaikan dengan
-                <span
-                    class="text-slate-800 font-semibold underline decoration-blue-200 decoration-2 underline-offset-4"
-                    >Amal</span
-                >"
+                "Setiap simpul adalah usaha, setiap benang adalah peran. Tidak
+                ada peran yang terlalu kecil, karena satu benang pun menentukan
+                bentuk akhir"
                 <br class="hidden md:block" />
                 <span
                     class="text-sm md:text-base text-slate-400 mt-2 block italic"
-                    >Beriman, Berilmu, Beramal. Yakin Usaha Sampai.</span
+                    >Dirajut Bersama, Digerakkan Bersama.</span
                 >
             </p>
 

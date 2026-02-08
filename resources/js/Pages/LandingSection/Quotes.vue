@@ -35,19 +35,26 @@
                 <p
                     class="text-2xl md:text-3xl lg:text-4xl leading-relaxed font-serif text-slate-700 italic font-medium drop-shadow-sm"
                 >
-                    "Pengabdian kader HMI di mana pun mereka berkiprah, haruslah
-                    dilandasi dengan dasar
+                    Kabinet Merajut Asa adalah tentang
                     <span
                         class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 font-bold not-italic"
-                        >keumatan</span
-                    >,
+                        >merangkai</span
+                    >
+                    yang tercerai,
                     <span
                         class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 font-bold not-italic"
-                        >kebangsaan</span
-                    >, dan
+                        >menyatukan</span
+                    >
+                    yang berjalan sendiri, dan
                     <span
                         class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 font-bold not-italic"
-                        >keislaman</span
+                        >mengubah</span
+                    >
+                    harapan menjadi kerja bersama. Bukan tentang siapa yang
+                    paling lantang, tapi siapa yang paling konsisten
+                    <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 font-bold not-italic"
+                        >merajut perubahan</span
                     >."
                 </p>
 
@@ -59,12 +66,12 @@
                     <cite
                         class="not-italic text-xl md:text-2xl font-bold text-slate-900 tracking-wide uppercase"
                     >
-                        Lafran Pane
+                        Sanditya Saputra
                     </cite>
                     <span
                         class="text-sm font-medium text-slate-500 tracking-wider"
                     >
-                        Pendiri Himpunan Mahasiswa Islam (HMI)
+                        Presiden Mahasiswa UNIKOM 2025-2026
                     </span>
                 </footer>
             </blockquote>
