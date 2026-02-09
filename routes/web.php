@@ -91,6 +91,9 @@ Route::get('/kesekretariatan', function () {
     return Inertia::render('Kesekretariatan');
 })->name('kesekretariatan');
 
+Route::get('/register', function () {
+    return Inertia::render('Register');
+})->name('register');
 
 
 
