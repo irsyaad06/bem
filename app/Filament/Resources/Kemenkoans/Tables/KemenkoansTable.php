@@ -5,10 +5,8 @@ namespace App\Filament\Resources\Kemenkoans\Tables;
 use Filament\Tables\Table;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ImageColumn;
-use Filament\Tables\Actions\EditAction;
-use Filament\Tables\Actions\DeleteAction;
-use Filament\Tables\Actions\BulkActionGroup;
-use Filament\Tables\Actions\DeleteBulkAction;
+use Filament\Actions\DeleteAction;
+use Filament\Actions\EditAction;
 
 class KemenkoansTable
 {
@@ -37,18 +35,16 @@ class KemenkoansTable
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
+
+            ->recordActions([
+                EditAction::make(),
+                DeleteAction::make(),
+            ])
+
             ->filters([
                 // Filter bisa ditambahkan di sini nanti
             ])
-            // ->actions([
-            //     EditAction::make(),
-            //     DeleteAction::make(),
-            // ])
-            // ->bulkActions([
-            //     BulkActionGroup::make([
-            //         DeleteBulkAction::make(),
-            //     ]),
-            // ])
+
         ;
     }
 }
