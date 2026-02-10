@@ -13,12 +13,17 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use UnitEnum;
 
 class TupoksiResource extends Resource
 {
     protected static ?string $model = Tupoksi::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedBriefcase;
+
+    protected static string | UnitEnum | null $navigationGroup = 'Manajemen Kegiatan';
+    protected static ?int $navigationSort = 3;
+    protected static ?string $navigationLabel = 'Tupoksi';
 
     public static function form(Schema $schema): Schema
     {
