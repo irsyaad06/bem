@@ -8,4 +8,8 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateProfilAnggota extends CreateRecord
 {
     protected static string $resource = ProfilAnggotaResource::class;
+    protected function getRedirectUrl(): string
+{
+    return $this->getResource()::getUrl('index');
+}
 }
