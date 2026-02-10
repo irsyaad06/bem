@@ -78,10 +78,12 @@ class ProgramKerjaForm
 
                         DatePicker::make('tanggal_mulai')
                             ->label('Tanggal Mulai')
+                            ->native(false)
                             ->required(),
 
                         DatePicker::make('tanggal_selesai')
                             ->label('Tanggal Selesai')
+                            ->native(false)
                             ->afterOrEqual('tanggal_mulai'),
                     ])
                     ->columns(2), // Bagi 2 kolom

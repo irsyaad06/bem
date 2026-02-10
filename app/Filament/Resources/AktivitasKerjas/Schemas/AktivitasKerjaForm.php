@@ -79,6 +79,7 @@ class AktivitasKerjaForm
                         DatePicker::make('tanggal')
                             ->label('Tanggal Pelaksanaan')
                             ->required()
+                            ->native(false)
                             ->columnSpanFull(), // Tanggal sendiri biar lebar
                     ])
                     ->columns(2),
