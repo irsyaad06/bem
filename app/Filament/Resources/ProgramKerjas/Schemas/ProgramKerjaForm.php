@@ -38,7 +38,6 @@ class ProgramKerjaForm
                             ->label('Link (terisi otomatis)')
                             ->required()
                             ->readOnly()
-                            ->disabled()
                             ->unique(ignoreRecord: true),
 
                         Select::make('id_kementerian')

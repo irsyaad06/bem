@@ -2,11 +2,13 @@
 
 namespace App\Filament\Resources\AktivitasKerjas\Tables;
 
-use Filament\Actions\BulkActionGroup;
-use Filament\Actions\DeleteBulkAction;
-use Filament\Actions\EditAction;
-use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\ImageColumn;
+use Filament\Actions\EditAction;
+use Filament\Actions\DeleteAction;
+
+use Illuminate\Support\Str;
 
 class AktivitasKerjasTable
 {
@@ -14,43 +16,55 @@ class AktivitasKerjasTable
     {
         return $table
             ->columns([
-                TextColumn::make('id_kementerian')
-                    ->numeric()
-                    ->sortable(),
+                ImageColumn::make('foto_dokumentasi')
+                    ->label('Foto')
+                    ->square()
+                    ->defaultImageUrl(url('/images/default-activity.png')),
+
                 TextColumn::make('nama_aktivitas')
-                    ->searchable(),
-                TextColumn::make('slug')
-                    ->searchable(),
-                TextColumn::make('lokasi')
-                    ->searchable(),
-                TextColumn::make('link_lokasi')
-                    ->searchable(),
-                TextColumn::make('tanggal')
-                    ->date()
+                    ->label('Nama Aktivitas')
+                    ->searchable()
+                    ->sortable()
+                    ->weight('bold')
+                    ->wrap()
+                    ->description(fn ($record) => Str::limit($record->lokasi, 30)),
+
+                TextColumn::make('kementerian.nama')
+                    ->label('Pelaksana')
+                    ->badge()
+                    ->color('gray')
                     ->sortable(),
+
+                TextColumn::make('tanggal')
+                    ->date('d M Y') // Format: 10 Feb 2026
+                    ->sortable(),
+
                 TextColumn::make('status')
-                    ->badge(),
-                TextColumn::make('foto_dokumentasi')
-                    ->searchable(),
+                    ->badge()
+                    ->colors([
+                        'info' => 'segera_hadir',
+                        'warning' => 'berlangsung',
+                        'success' => 'terlaksana',
+                    ])
+                    ->formatStateUsing(fn (string $state): string => match ($state) {
+                        'segera_hadir' => 'Segera Hadir',
+                        'berlangsung' => 'Berlangsung',
+                        'terlaksana' => 'Selesai',
+                        default => $state,
+                    }),
+
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
-                TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
             ])
+            ->defaultSort('tanggal', 'desc') // Urutkan dari yang terbaru
             ->filters([
                 //
             ])
             ->recordActions([
                 EditAction::make(),
-            ])
-            ->toolbarActions([
-                BulkActionGroup::make([
-                    DeleteBulkAction::make(),
-                ]),
+                DeleteAction::make(),
             ]);
     }
 }
