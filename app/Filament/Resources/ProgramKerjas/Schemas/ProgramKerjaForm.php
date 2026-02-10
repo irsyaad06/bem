@@ -35,8 +35,10 @@ class ProgramKerjaForm
 
                         TextInput::make('slug')
                             ->key('slug_input')
+                            ->label('Link (terisi otomatis)')
                             ->required()
                             ->readOnly()
+                            ->disabled()
                             ->unique(ignoreRecord: true),
 
                         Select::make('id_kementerian')
