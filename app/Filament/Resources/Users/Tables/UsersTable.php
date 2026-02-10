@@ -2,11 +2,12 @@
 
 namespace App\Filament\Resources\Users\Tables;
 
-use Filament\Actions\BulkActionGroup;
-use Filament\Actions\DeleteBulkAction;
-use Filament\Actions\EditAction;
-use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\IconColumn;
+use Filament\Actions\EditAction;
+use Filament\Actions\DeleteAction;
+use Filament\Support\Icons\Heroicon;
 
 class UsersTable
 {
@@ -14,33 +15,40 @@ class UsersTable
     {
         return $table
             ->columns([
+                // Menampilkan Avatar dari Inisial Nama (Fitur bawaan Filament/UI Avatars)
                 TextColumn::make('name')
-                    ->searchable(),
-                TextColumn::make('email')
-                    ->label('Email address')
-                    ->searchable(),
-                TextColumn::make('email_verified_at')
-                    ->dateTime()
-                    ->sortable(),
+                    ->label('Pengguna')
+                    ->searchable()
+                    ->sortable()
+                    ->weight('bold')
+                    ->description(fn($record) => $record->email), // Email tampil kecil di bawah nama
+
+                // Indikator Verifikasi Email (Icon Ceklis/Silang)
+                IconColumn::make('email_verified_at')
+                    ->label('Verifikasi')
+                    ->boolean()
+                    ->trueIcon(Heroicon::OutlinedCheckBadge)
+                    ->falseIcon(Heroicon::OutlinedXMark)
+                    ->alignCenter(),
+
                 TextColumn::make('created_at')
-                    ->dateTime()
+                    ->label('Bergabung')
+                    ->dateTime('d M Y')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
+
                 TextColumn::make('updated_at')
-                    ->dateTime()
+                    ->label('Update Terakhir')
+                    ->since()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                //
+                // Bisa tambah filter verified/unverified disini
             ])
             ->recordActions([
                 EditAction::make(),
-            ])
-            ->toolbarActions([
-                BulkActionGroup::make([
-                    DeleteBulkAction::make(),
-                ]),
+                DeleteAction::make(), // Tambahkan Delete agar bisa hapus user
             ]);
     }
 }

@@ -22,7 +22,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'peran', // Wajib ditambahkan agar kolom 'peran' bisa diisi
+        'peran',
+        'email_verified_at'
     ];
 
     /**
