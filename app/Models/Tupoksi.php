@@ -8,25 +8,16 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Tupoksi extends Model
 {
-    use HasFactory;
 
-    /**
-     * Nama tabel eksplisit
-     */
     protected $table = 'tupoksi';
+    protected $guarded = [];
 
-    /**
-     * Kolom yang aman untuk diisi (Mass Assignment)
-     */
-    protected $fillable = [
-        'id_kementerian',
-        'deskripsi',
+    // INI PENTING: Agar otomatis jadi Array saat ditarik/disimpan
+    protected $casts = [
+        'deskripsi' => 'array',
     ];
 
-    /**
-     * Relasi: Tupoksi milik satu Kementerian
-     */
-    public function kementerian(): BelongsTo
+    public function kementerian()
     {
         return $this->belongsTo(Kementerian::class, 'id_kementerian');
     }

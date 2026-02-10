@@ -2,11 +2,10 @@
 
 namespace App\Filament\Resources\Tupoksis\Tables;
 
-use Filament\Actions\BulkActionGroup;
-use Filament\Actions\DeleteBulkAction;
-use Filament\Actions\EditAction;
-use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Actions\DeleteAction;
+use Filament\Actions\EditAction;
 
 class TupoksisTable
 {
@@ -14,28 +13,37 @@ class TupoksisTable
     {
         return $table
             ->columns([
-                TextColumn::make('id_kementerian')
-                    ->numeric()
-                    ->sortable(),
-                TextColumn::make('created_at')
-                    ->dateTime()
+                TextColumn::make('kementerian.nama')
+                    ->label('Kementerian')
                     ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->searchable()
+                    ->weight('bold')
+                    ->badge()
+                    ->color('info'),
+
+                // Tampilkan isi list array tupoksi
+                TextColumn::make('deskripsi')
+                    ->label('Tupoksi')
+                    ->listWithLineBreaks()
+                    ->bulleted()
+                    ->limitList(3)
+                    ->expandableLimitedList()
+                    // --- TAMBAHKAN INI ---
+                    ->getStateUsing(function ($record) {
+                        // Kita ambil array deskripsi, lalu cuma ambil value 'poin'-nya aja
+                        return collect($record->deskripsi ?? [])
+                            ->pluck('poin')
+                            ->toArray();
+                    }),
+
                 TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-            ])
-            ->filters([
-                //
+                    ->label('Terakhir Update')
+                    ->since()
+                    ->sortable(),
             ])
             ->recordActions([
                 EditAction::make(),
-            ])
-            ->toolbarActions([
-                BulkActionGroup::make([
-                    DeleteBulkAction::make(),
-                ]),
+                DeleteAction::make(),
             ]);
     }
 }
