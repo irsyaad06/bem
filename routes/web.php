@@ -95,6 +95,14 @@ Route::get('/register', function () {
     return Inertia::render('Register');
 })->name('register');
 
+Route::get('/profile-kamu', function () {
+    return Inertia::render('ProfileEdit');
+})->name('profile.edit');
+
+Route::get('/login', function () {
+    return Inertia::render('Login');
+})->name('login');
+
 
 
 
