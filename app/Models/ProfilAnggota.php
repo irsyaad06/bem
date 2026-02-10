@@ -10,14 +10,7 @@ class ProfilAnggota extends Model
 {
     use HasFactory;
 
-    /**
-     * Menentukan nama tabel secara eksplisit karena formatnya bahasa Indonesia
-     */
     protected $table = 'profil_anggota';
-
-    /**
-     * Daftar kolom yang aman untuk diisi secara massal (Mass Assignment)
-     */
     protected $fillable = [
         'id_user',
         'id_kemenkoan',
@@ -39,54 +32,33 @@ class ProfilAnggota extends Model
         'username_linkedin',
         'bio_singkat',
     ];
-
-    /**
-     * Konversi tipe data otomatis
-     */
     protected $casts = [
-        'aktif' => 'boolean',        // Konversi 1/0 ke true/false
-        'level_jabatan' => 'integer', // Pastikan selalu integer
+        'aktif' => 'boolean',
+        'level_jabatan' => 'integer',
     ];
-
-    /*
-    |--------------------------------------------------------------------------
-    | RELASI (Relationships)
-    |--------------------------------------------------------------------------
-    */
-
-    /**
-     * Relasi ke User (Akun Login)
-     * Foreign Key: id_user
-     */
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class, 'id_user');
     }
 
-    /**
-     * Relasi ke Kemenkoan
-     * Foreign Key: id_kemenkoan
-     */
+    public function fakultas(): BelongsTo
+    {
+        return $this->belongsTo(Fakultas::class, 'id_fakultas');
+    }
+
+    public function jurusan(): BelongsTo
+    {
+        return $this->belongsTo(Jurusan::class, 'id_jurusan');
+    }
     public function kemenkoan(): BelongsTo
     {
         return $this->belongsTo(Kemenkoan::class, 'id_kemenkoan');
     }
 
-    /**
-     * Relasi ke Kementerian
-     * Foreign Key: id_kementerian
-     */
     public function kementerian(): BelongsTo
     {
         return $this->belongsTo(Kementerian::class, 'id_kementerian');
     }
-
-    /*
-    |--------------------------------------------------------------------------
-    | HELPER METHODS (Opsional)
-    |--------------------------------------------------------------------------
-    | Memudahkan pengecekan jabatan di controller/view
-    */
 
     public function isPresidenAtauWapres(): bool
     {

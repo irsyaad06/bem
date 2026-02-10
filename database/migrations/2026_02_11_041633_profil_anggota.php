@@ -30,14 +30,22 @@ return new class extends Migration
                 ->constrained('kementerian')
                 ->nullOnDelete();
 
+
+
             // --- DATA PRIBADI ---
             $table->string('nama_lengkap');
             $table->string('nama_panggilan')->nullable();
             $table->string('nim')->nullable();
-            $table->string('fakultas')->nullable();
-            $table->string('prodi')->nullable();
             $table->string('angkatan', 4)->nullable(); // 2024
+            $table->foreignId('id_fakultas')
+                ->nullable()
+                ->constrained('fakultas')
+                ->nullOnDelete();
 
+            $table->foreignId('id_jurusan')
+                ->nullable()
+                ->constrained('jurusans')
+                ->nullOnDelete();
             // --- JABATAN ---
             $table->string('nama_jabatan'); // Contoh: "Presiden Mahasiswa", "Dirjen", "Staff Muda"
 
