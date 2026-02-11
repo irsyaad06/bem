@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\ProfilAnggotas\Schemas;
 
+use App\Models\Jurusan;
 use Filament\Schemas\Schema;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Grid;
@@ -11,6 +12,12 @@ use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\FileUpload;
+use Filament\Schemas\Components\Utilities\Set;
+use Filament\Schemas\Components\Utilities\Get;
+use Illuminate\Support\Collection;
+use Illuminate\Database\Eloquent\Builder; // Jangan lupa import ini
+
+
 
 class ProfilAnggotaForm
 {
@@ -28,11 +35,24 @@ class ProfilAnggotaForm
                             ->schema([
                                 Select::make('id_user')
                                     ->label('Akun User Terkait')
-                                    ->relationship('user', 'name') // Asumsi relasi di model ProfilAnggota: function user()
+                                    ->relationship(
+                                        name: 'user',
+                                        titleAttribute: 'name',
+                                        modifyQueryUsing: function (Builder $query, $operation, $record) {
+                                            // KONDISI 1: Tampilkan user yang TIDAK PUNYA relasi profilAnggota
+                                            $query->whereDoesntHave('profilAnggota');
+
+                                            // KONDISI 2: Jika sedang mode EDIT, user yang sedang dipakai record ini
+                                            // harus tetap muncul (biar gak error/hilang saat diedit)
+                                            if ($operation === 'edit' && $record) {
+                                                $query->orWhere('id', $record->id_user);
+                                            }
+                                        }
+                                    )
                                     ->searchable()
                                     ->preload()
                                     ->required()
-                                    ->columnSpanFull(), // Lebar penuh
+                                    ->columnSpanFull(),
 
                                 TextInput::make('nama_lengkap')
                                     ->required()
@@ -50,12 +70,24 @@ class ProfilAnggotaForm
                                     ->numeric()
                                     ->maxLength(4),
 
-                                TextInput::make('fakultas')
+                                Select::make('id_fakultas')
+                                    ->label('Fakultas')
+                                    ->relationship('fakultas', 'nama')
+                                    ->searchable()
+                                    ->preload()
+                                    ->live()
+                                    ->afterStateUpdated(fn(Set $set) => $set('id_jurusan', null))
                                     ->required(),
 
-                                TextInput::make('prodi')
+                                Select::make('id_jurusan')
                                     ->label('Program Studi')
-                                    ->required(),
+                                    ->options(fn(Get $get): Collection => Jurusan::query()
+                                        ->where('fakultas_id', $get('id_fakultas'))
+                                        ->pluck('nama', 'id'))
+                                    ->searchable()
+                                    ->preload()
+                                    ->required()
+                                    ->disabled(fn(Get $get) => ! $get('id_fakultas')),
 
                                 TextInput::make('nomor_telepon')
                                     ->tel()

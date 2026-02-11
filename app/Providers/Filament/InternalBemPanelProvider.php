@@ -28,6 +28,7 @@ class InternalBemPanelProvider extends PanelProvider
             ->id('internal-bem')
             ->path('internal-bem')
             ->login()
+            ->registration()
             ->colors([
                 'primary' => Color::Blue,
             ])
