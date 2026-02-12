@@ -2,6 +2,8 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Pages\Auth\CustomLogin;
+use App\Filament\Pages\Auth\CustomRegister;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -27,8 +29,8 @@ class InternalBemPanelProvider extends PanelProvider
             ->default()
             ->id('internal-bem')
             ->path('internal-bem')
-            ->login()
-            ->registration()
+            ->login(CustomLogin::class)
+            ->registration(CustomRegister::class)
             ->colors([
                 'primary' => Color::Blue,
             ])
